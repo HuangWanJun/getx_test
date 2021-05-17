@@ -5,7 +5,10 @@ import 'package:myapp/pages/list/index.dart';
 import 'package:myapp/pages/list_detail/index.dart';
 import 'package:myapp/pages/login/index.dart';
 import 'package:myapp/pages/my/index.dart';
+import 'package:myapp/pages/nested_navigation/index.dart';
 import 'package:myapp/pages/notfound/index.dart';
+
+import 'binding.dart';
 
 part 'app_routes.dart';
 
@@ -34,10 +37,17 @@ class AppPages {
     ),
 
     GetPage(name: AppRoutes.Home, page: () => HomeView(), children: [
-      GetPage(name: AppRoutes.List, page: () => ListView(), children: [
+      GetPage(name: AppRoutes.List, page: () => ListIndexView(), children: [
         GetPage(name: AppRoutes.Detail, page: () => DetailView()),
         GetPage(name: AppRoutes.Detail_ID, page: () => DetailView()),
       ]),
     ]),
+
+    // 嵌套导航
+    GetPage(
+      name: AppRoutes.NestedNavigator,
+      page: () => NestedNavView(),
+      binding: NestedBinding(),
+    ),
   ];
 }

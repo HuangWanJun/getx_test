@@ -85,6 +85,12 @@ class _HomeViewState extends State<HomeView> {
             onTap: () => Get.toNamed(AppRoutes.My),
           ),
           Divider(),
+          ListTile(
+            title: Text("嵌套导航"),
+            subtitle: Text('Get.toNamed(AppRoutes.NestedNavigator)'),
+            onTap: () => Get.toNamed(AppRoutes.NestedNavigator),
+          ),
+          Divider(),
         ],
       ),
     );
